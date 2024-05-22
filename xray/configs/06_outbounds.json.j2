@@ -112,6 +112,24 @@
         "address": "{{hconfigs['dns_server'] or '1.1.1.1'}}",
         "port": 53
       }
+    },
+    {
+      "tag": "fragment",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "AsIs",
+        "fragment": {
+          "packets": "tlshello",
+          "length": "5-8",
+          "interval": "20-30"
+        }
+      },
+      "streamSettings": {
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpKeepAliveIdle": 100
+        }
+      }
     }
   ]
 }
