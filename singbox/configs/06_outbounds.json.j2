@@ -33,6 +33,24 @@
       // A DNS Cache can be setup and added here to imporve performance (the corresponding rule should be uncommented)
       "tag": "DNS-Internal",
       "type": "dns"
+    },
+    {
+      "tag": "fragment",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "AsIs",
+        "fragment": {
+          "packets": "tlshello",
+          "length": "10-20",
+          "interval": "10-20"
+        }
+      },
+      "streamSettings": {
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpKeepAliveIdle": 100
+        }
+      }
     }
   ]
 }
